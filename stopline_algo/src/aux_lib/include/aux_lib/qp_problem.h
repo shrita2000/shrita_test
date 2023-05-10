@@ -195,15 +195,15 @@ class QPProblem {
     
     //update x ideal vector
     x_ideal(params_alg_m.pos_idxs) = Eigen::VectorXd::
-      Constant(params_alg_m.np, stopalgo_struct.stopline_dist_m);
+      Constant(params_alg_m.np, stopalgo_struct.stopline_dist);
 
     //update linear term F
     f = -H_free_m*x_ideal;
 
     //update position uppper bound
     for(int i=0; i<params_alg_m.np; i++){
-      if(ub_state(params_alg_m.pos_idxs(i))>stopalgo_struct.stopline_dist_m){
-        ub_state(params_alg_m.pos_idxs(i))=stopalgo_struct.stopline_dist_m;
+      if(ub_state(params_alg_m.pos_idxs(i))>stopalgo_struct.stopline_dist){
+        ub_state(params_alg_m.pos_idxs(i))=stopalgo_struct.stopline_dist;
       }
     }
   } 

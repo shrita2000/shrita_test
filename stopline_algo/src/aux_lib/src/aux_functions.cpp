@@ -546,14 +546,6 @@ void AccelerationBehavior(const ai4ad::AgentStateSimple &state_input,
     //update stopline_dist_m for QP problem
     stopalgo_struct.stopline_dist = stopline_dist; 
     stopalgo_struct.NearStopline = true;
-    //if threshold reached start timer
-    if(stopalgo_struct.stopline_dist <= params_alg.stopline_threshold){
-      stopalgo_struct.timer+=0.1;
-    }
-    //if wait time completed, set bool to zero
-    if(stopalgo_struct.timer>params_alg.stopline_time){
-      stopalgo_struct.NearStopline = false;
-    }
     return stopalgo_struct.NearStopline;
   }
 

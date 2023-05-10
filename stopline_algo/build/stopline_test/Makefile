@@ -56,6 +56,18 @@ CMAKE_BINARY_DIR = /home/j0986329/shrita_test/stopline_algo/build
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
+
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
@@ -100,18 +112,6 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
-
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip/fast
 
 # Special rule for the target edit_cache
 edit_cache:
@@ -182,63 +182,6 @@ stopline_test_mpc_node/fast:
 	cd /home/j0986329/shrita_test/stopline_algo/build && $(MAKE) -f stopline_test/CMakeFiles/stopline_test_mpc_node.dir/build.make stopline_test/CMakeFiles/stopline_test_mpc_node.dir/build
 .PHONY : stopline_test_mpc_node/fast
 
-# Convenience name for target.
-stopline_test/CMakeFiles/stopline_test_iter_node.dir/rule:
-	cd /home/j0986329/shrita_test/stopline_algo/build && $(MAKE) -f CMakeFiles/Makefile2 stopline_test/CMakeFiles/stopline_test_iter_node.dir/rule
-.PHONY : stopline_test/CMakeFiles/stopline_test_iter_node.dir/rule
-
-# Convenience name for target.
-stopline_test_iter_node: stopline_test/CMakeFiles/stopline_test_iter_node.dir/rule
-
-.PHONY : stopline_test_iter_node
-
-# fast build rule for target.
-stopline_test_iter_node/fast:
-	cd /home/j0986329/shrita_test/stopline_algo/build && $(MAKE) -f stopline_test/CMakeFiles/stopline_test_iter_node.dir/build.make stopline_test/CMakeFiles/stopline_test_iter_node.dir/build
-.PHONY : stopline_test_iter_node/fast
-
-# Convenience name for target.
-stopline_test/CMakeFiles/stopline_test_simple_node.dir/rule:
-	cd /home/j0986329/shrita_test/stopline_algo/build && $(MAKE) -f CMakeFiles/Makefile2 stopline_test/CMakeFiles/stopline_test_simple_node.dir/rule
-.PHONY : stopline_test/CMakeFiles/stopline_test_simple_node.dir/rule
-
-# Convenience name for target.
-stopline_test_simple_node: stopline_test/CMakeFiles/stopline_test_simple_node.dir/rule
-
-.PHONY : stopline_test_simple_node
-
-# fast build rule for target.
-stopline_test_simple_node/fast:
-	cd /home/j0986329/shrita_test/stopline_algo/build && $(MAKE) -f stopline_test/CMakeFiles/stopline_test_simple_node.dir/build.make stopline_test/CMakeFiles/stopline_test_simple_node.dir/build
-.PHONY : stopline_test_simple_node/fast
-
-src/main_iter.o: src/main_iter.cpp.o
-
-.PHONY : src/main_iter.o
-
-# target to build an object file
-src/main_iter.cpp.o:
-	cd /home/j0986329/shrita_test/stopline_algo/build && $(MAKE) -f stopline_test/CMakeFiles/stopline_test_iter_node.dir/build.make stopline_test/CMakeFiles/stopline_test_iter_node.dir/src/main_iter.cpp.o
-.PHONY : src/main_iter.cpp.o
-
-src/main_iter.i: src/main_iter.cpp.i
-
-.PHONY : src/main_iter.i
-
-# target to preprocess a source file
-src/main_iter.cpp.i:
-	cd /home/j0986329/shrita_test/stopline_algo/build && $(MAKE) -f stopline_test/CMakeFiles/stopline_test_iter_node.dir/build.make stopline_test/CMakeFiles/stopline_test_iter_node.dir/src/main_iter.cpp.i
-.PHONY : src/main_iter.cpp.i
-
-src/main_iter.s: src/main_iter.cpp.s
-
-.PHONY : src/main_iter.s
-
-# target to generate assembly for a file
-src/main_iter.cpp.s:
-	cd /home/j0986329/shrita_test/stopline_algo/build && $(MAKE) -f stopline_test/CMakeFiles/stopline_test_iter_node.dir/build.make stopline_test/CMakeFiles/stopline_test_iter_node.dir/src/main_iter.cpp.s
-.PHONY : src/main_iter.cpp.s
-
 src/main_mpc.o: src/main_mpc.cpp.o
 
 .PHONY : src/main_mpc.o
@@ -266,58 +209,23 @@ src/main_mpc.cpp.s:
 	cd /home/j0986329/shrita_test/stopline_algo/build && $(MAKE) -f stopline_test/CMakeFiles/stopline_test_mpc_node.dir/build.make stopline_test/CMakeFiles/stopline_test_mpc_node.dir/src/main_mpc.cpp.s
 .PHONY : src/main_mpc.cpp.s
 
-src/test.o: src/test.cpp.o
-
-.PHONY : src/test.o
-
-# target to build an object file
-src/test.cpp.o:
-	cd /home/j0986329/shrita_test/stopline_algo/build && $(MAKE) -f stopline_test/CMakeFiles/stopline_test_simple_node.dir/build.make stopline_test/CMakeFiles/stopline_test_simple_node.dir/src/test.cpp.o
-.PHONY : src/test.cpp.o
-
-src/test.i: src/test.cpp.i
-
-.PHONY : src/test.i
-
-# target to preprocess a source file
-src/test.cpp.i:
-	cd /home/j0986329/shrita_test/stopline_algo/build && $(MAKE) -f stopline_test/CMakeFiles/stopline_test_simple_node.dir/build.make stopline_test/CMakeFiles/stopline_test_simple_node.dir/src/test.cpp.i
-.PHONY : src/test.cpp.i
-
-src/test.s: src/test.cpp.s
-
-.PHONY : src/test.s
-
-# target to generate assembly for a file
-src/test.cpp.s:
-	cd /home/j0986329/shrita_test/stopline_algo/build && $(MAKE) -f stopline_test/CMakeFiles/stopline_test_simple_node.dir/build.make stopline_test/CMakeFiles/stopline_test_simple_node.dir/src/test.cpp.s
-.PHONY : src/test.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... install/strip"
 	@echo "... install/local"
 	@echo "... install"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
-	@echo "... stopline_test_mpc_node"
-	@echo "... install/strip"
-	@echo "... stopline_test_iter_node"
 	@echo "... edit_cache"
 	@echo "... test"
-	@echo "... stopline_test_simple_node"
-	@echo "... src/main_iter.o"
-	@echo "... src/main_iter.i"
-	@echo "... src/main_iter.s"
+	@echo "... stopline_test_mpc_node"
 	@echo "... src/main_mpc.o"
 	@echo "... src/main_mpc.i"
 	@echo "... src/main_mpc.s"
-	@echo "... src/test.o"
-	@echo "... src/test.i"
-	@echo "... src/test.s"
 .PHONY : help
 
 
