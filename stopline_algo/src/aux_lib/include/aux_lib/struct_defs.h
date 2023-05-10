@@ -134,26 +134,26 @@ struct IDM {
  * - added by shrita
  */
 struct StoplineBreak {
-  Eigen::VectorXd vmax_stopline; /**<Upper bound on velocity for stop line*/
+  // Eigen::VectorXd vmax_stopline; /**<Upper bound on velocity for stop line*/
   bool NearStopline; /**<Bool for whether car is in stopline region*/
-  bool Break;
+  // bool Break;
   double stopline_dist_m; /**<Distance between car and stopline*/
-  int stopline_timer; /**<Timer for stopline wait*/
-  int max_iter;
-  double a_init;
-  double j_init;
-  float rate;
+  // int stopline_timer; /**<Timer for stopline wait*/
+  // int max_iter;
+  // double a_init;
+  // double j_init;
+  // float rate;
   Eigen::VectorXd p_traj; /**<Upper bound on velocity for stop line*/
   Eigen::VectorXd v_traj; /**<Upper bound on velocity for stop line*/
   Eigen::VectorXd a_traj; /**<Upper bound on velocity for stop line*/
   Eigen::VectorXd j_traj; /**<Upper bound on velocity for stop line*/
 
-  double stopline_dmin; /**<Min distance from stop line at which 
-                                      decceleration should begin*/
-  double stopline_amin; /**<Min acc for stopping behaviour*/ 
-  double stopline_tmax; /**<Max time for stopping behaviour*/
-  double stopline_threshold; /**<Threshold distance for stopping and starting timer*/
-  int case_no;
+  // double stopline_dmin; /**<Min distance from stop line at which 
+                                      // decceleration should begin*/
+  // double stopline_amin; /**<Min acc for stopping behaviour*/ 
+  // double stopline_tmax; /**<Max time for stopping behaviour*/
+  // double stopline_threshold; /**<Threshold distance for stopping and starting timer*/
+  // int case_no;
 };
 
 /**

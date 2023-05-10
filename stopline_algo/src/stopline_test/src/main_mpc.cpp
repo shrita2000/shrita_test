@@ -69,8 +69,8 @@ int main(int argc, char **argv) {
         ai4ad::AgentStateSimple cur_ad_state;
         ai4ad::StoplineBreak stopalgo_struct;
         stopalgo_struct.NearStopline = false;
-        stopalgo_struct.Break = 0;
-        stopalgo_struct.stopline_timer = 0;
+        // stopalgo_struct.Break = 0;
+        // stopalgo_struct.stopline_timer = 0;
         cur_ad_state.pos = 0; 
         cur_ad_state.vel = 0;
         cur_ad_state.accel = 0;
@@ -86,10 +86,10 @@ int main(int argc, char **argv) {
         
         //initialize params for stopline
         double stopline_dist = 15; //initial dist from stopline 
-        stopalgo_struct.stopline_dmin = pow(params_alg_m.v_max,2)/(2*params_alg_m.acc_max)+10;
-        stopalgo_struct.stopline_amin = 0.4;
-        stopalgo_struct.stopline_tmax = 1;
-        stopalgo_struct.stopline_threshold = 0.2;
+        // stopalgo_struct.stopline_dmin = pow(params_alg_m.v_max,2)/(2*params_alg_m.acc_max)+10;
+        // stopalgo_struct.stopline_amin = 0.4;
+        // stopalgo_struct.stopline_tmax = 1;
+        // stopalgo_struct.stopline_threshold = 0.2;
         
         //initialize qp problem
         QPProblem* qp_problem_m = new QPProblem(params_alg_m);
@@ -101,15 +101,15 @@ int main(int argc, char **argv) {
                 //update time
                 time.push_back(i*params_alg_m.dt);
 
-                ROS_INFO("Algo params: stopline dist %lf threshold distance %lf", 
-                        stopline_dist, stopalgo_struct.stopline_dmin);
-                ROS_INFO("Algo params: a_stopline %lf a_threshold %lf", 
-                        pow(cur_ad_state.vel,2)/(2*stopline_dist), stopalgo_struct.stopline_amin);
-                ROS_INFO("Algo params: t_stopline %lf t_threshold %lf", 
-                        2*stopline_dist/cur_ad_state.vel, stopalgo_struct.stopline_tmax);
-                ROS_INFO("Algo params: nstopline %u", 
-                        uint16_t(std::round(2*stopline_dist/(cur_ad_state.vel*params_alg_m.dt))));
-                ROS_INFO("Algo params: cur vel %lf", cur_ad_state.vel);
+                // ROS_INFO("Algo params: stopline dist %lf threshold distance %lf", 
+                //         stopline_dist, stopalgo_struct.stopline_dmin);
+                // ROS_INFO("Algo params: a_stopline %lf a_threshold %lf", 
+                //         pow(cur_ad_state.vel,2)/(2*stopline_dist), stopalgo_struct.stopline_amin);
+                // ROS_INFO("Algo params: t_stopline %lf t_threshold %lf", 
+                //         2*stopline_dist/cur_ad_state.vel, stopalgo_struct.stopline_tmax);
+                // ROS_INFO("Algo params: nstopline %u", 
+                //         uint16_t(std::round(2*stopline_dist/(cur_ad_state.vel*params_alg_m.dt))));
+                // ROS_INFO("Algo params: cur vel %lf", cur_ad_state.vel);
 
                 //define stop line condition - checkstopline
                 bool near_stopline = CheckStopLine(stopline_dist,cur_ad_state,

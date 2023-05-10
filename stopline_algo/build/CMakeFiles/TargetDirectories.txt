@@ -87,13 +87,11 @@
 /home/j0986329/shrita_test/stopline_algo/build/aux_lib/CMakeFiles/actionlib_msgs_generate_messages_py.dir
 /home/j0986329/shrita_test/stopline_algo/build/aux_lib/CMakeFiles/rebuild_cache.dir
 /home/j0986329/shrita_test/stopline_algo/build/aux_lib/CMakeFiles/roscpp_generate_messages_eus.dir
+/home/j0986329/shrita_test/stopline_algo/build/stopline_test/CMakeFiles/install/strip.dir
 /home/j0986329/shrita_test/stopline_algo/build/stopline_test/CMakeFiles/install/local.dir
 /home/j0986329/shrita_test/stopline_algo/build/stopline_test/CMakeFiles/install.dir
 /home/j0986329/shrita_test/stopline_algo/build/stopline_test/CMakeFiles/list_install_components.dir
 /home/j0986329/shrita_test/stopline_algo/build/stopline_test/CMakeFiles/rebuild_cache.dir
-/home/j0986329/shrita_test/stopline_algo/build/stopline_test/CMakeFiles/stopline_test_mpc_node.dir
-/home/j0986329/shrita_test/stopline_algo/build/stopline_test/CMakeFiles/install/strip.dir
-/home/j0986329/shrita_test/stopline_algo/build/stopline_test/CMakeFiles/stopline_test_iter_node.dir
 /home/j0986329/shrita_test/stopline_algo/build/stopline_test/CMakeFiles/edit_cache.dir
 /home/j0986329/shrita_test/stopline_algo/build/stopline_test/CMakeFiles/test.dir
-/home/j0986329/shrita_test/stopline_algo/build/stopline_test/CMakeFiles/stopline_test_simple_node.dir
+/home/j0986329/shrita_test/stopline_algo/build/stopline_test/CMakeFiles/stopline_test_mpc_node.dir

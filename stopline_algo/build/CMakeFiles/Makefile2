@@ -203,8 +203,6 @@ gtest/googletest/clean: gtest/googletest/CMakeFiles/gtest.dir/clean
 
 # Recursive "all" directory target.
 stopline_test/all: stopline_test/CMakeFiles/stopline_test_mpc_node.dir/all
-stopline_test/all: stopline_test/CMakeFiles/stopline_test_iter_node.dir/all
-stopline_test/all: stopline_test/CMakeFiles/stopline_test_simple_node.dir/all
 
 .PHONY : stopline_test/all
 
@@ -215,8 +213,6 @@ stopline_test/preinstall:
 
 # Recursive "clean" directory target.
 stopline_test/clean: stopline_test/CMakeFiles/stopline_test_mpc_node.dir/clean
-stopline_test/clean: stopline_test/CMakeFiles/stopline_test_iter_node.dir/clean
-stopline_test/clean: stopline_test/CMakeFiles/stopline_test_simple_node.dir/clean
 
 .PHONY : stopline_test/clean
 
@@ -495,9 +491,9 @@ aux_lib/CMakeFiles/clean_test_results_aux_lib.dir/clean:
 # Target rules for target aux_lib/CMakeFiles/_run_tests_aux_lib_gtest_aux_lib-test.dir
 
 # All Build rule for target.
+aux_lib/CMakeFiles/_run_tests_aux_lib_gtest_aux_lib-test.dir/all: aux_lib/CMakeFiles/aux_lib-test.dir/all
 aux_lib/CMakeFiles/_run_tests_aux_lib_gtest_aux_lib-test.dir/all: CMakeFiles/tests.dir/all
 aux_lib/CMakeFiles/_run_tests_aux_lib_gtest_aux_lib-test.dir/all: aux_lib/CMakeFiles/clean_test_results_aux_lib.dir/all
-aux_lib/CMakeFiles/_run_tests_aux_lib_gtest_aux_lib-test.dir/all: aux_lib/CMakeFiles/aux_lib-test.dir/all
 	$(MAKE) -f aux_lib/CMakeFiles/_run_tests_aux_lib_gtest_aux_lib-test.dir/build.make aux_lib/CMakeFiles/_run_tests_aux_lib_gtest_aux_lib-test.dir/depend
 	$(MAKE) -f aux_lib/CMakeFiles/_run_tests_aux_lib_gtest_aux_lib-test.dir/build.make aux_lib/CMakeFiles/_run_tests_aux_lib_gtest_aux_lib-test.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/j0986329/shrita_test/stopline_algo/build/CMakeFiles --progress-num= "Built target _run_tests_aux_lib_gtest_aux_lib-test"
@@ -632,9 +628,9 @@ aux_lib/CMakeFiles/run_tests_aux_lib.dir/clean:
 # Target rules for target aux_lib/CMakeFiles/aux_lib-test.dir
 
 # All Build rule for target.
-aux_lib/CMakeFiles/aux_lib-test.dir/all: gtest/googletest/CMakeFiles/gtest.dir/all
 aux_lib/CMakeFiles/aux_lib-test.dir/all: aux_lib/CMakeFiles/plot_lib.dir/all
 aux_lib/CMakeFiles/aux_lib-test.dir/all: aux_lib/CMakeFiles/aux_lib.dir/all
+aux_lib/CMakeFiles/aux_lib-test.dir/all: gtest/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) -f aux_lib/CMakeFiles/aux_lib-test.dir/build.make aux_lib/CMakeFiles/aux_lib-test.dir/depend
 	$(MAKE) -f aux_lib/CMakeFiles/aux_lib-test.dir/build.make aux_lib/CMakeFiles/aux_lib-test.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/j0986329/shrita_test/stopline_algo/build/CMakeFiles --progress-num=5,6 "Built target aux_lib-test"
@@ -669,17 +665,6 @@ aux_lib/CMakeFiles/plot_lib.dir/all: aux_lib/CMakeFiles/geometry_msgs_generate_m
 aux_lib/CMakeFiles/plot_lib.dir/all: aux_lib/CMakeFiles/roscpp_generate_messages_lisp.dir/all
 aux_lib/CMakeFiles/plot_lib.dir/all: aux_lib/CMakeFiles/traffic_msgs_generate_messages_py.dir/all
 aux_lib/CMakeFiles/plot_lib.dir/all: aux_lib/CMakeFiles/std_msgs_generate_messages_eus.dir/all
-aux_lib/CMakeFiles/plot_lib.dir/all: aux_lib/CMakeFiles/roscpp_generate_messages_nodejs.dir/all
-aux_lib/CMakeFiles/plot_lib.dir/all: aux_lib/CMakeFiles/std_msgs_generate_messages_cpp.dir/all
-aux_lib/CMakeFiles/plot_lib.dir/all: aux_lib/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/all
-aux_lib/CMakeFiles/plot_lib.dir/all: aux_lib/CMakeFiles/traffic_msgs_generate_messages_eus.dir/all
-aux_lib/CMakeFiles/plot_lib.dir/all: aux_lib/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/all
-aux_lib/CMakeFiles/plot_lib.dir/all: aux_lib/CMakeFiles/std_msgs_generate_messages_py.dir/all
-aux_lib/CMakeFiles/plot_lib.dir/all: aux_lib/CMakeFiles/geometry_msgs_generate_messages_eus.dir/all
-aux_lib/CMakeFiles/plot_lib.dir/all: aux_lib/CMakeFiles/traffic_msgs_generate_messages_cpp.dir/all
-aux_lib/CMakeFiles/plot_lib.dir/all: aux_lib/CMakeFiles/std_msgs_generate_messages_nodejs.dir/all
-aux_lib/CMakeFiles/plot_lib.dir/all: aux_lib/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all
-aux_lib/CMakeFiles/plot_lib.dir/all: aux_lib/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/all
 aux_lib/CMakeFiles/plot_lib.dir/all: aux_lib/CMakeFiles/nav_msgs_generate_messages_nodejs.dir/all
 aux_lib/CMakeFiles/plot_lib.dir/all: aux_lib/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
 aux_lib/CMakeFiles/plot_lib.dir/all: aux_lib/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/all
@@ -696,6 +681,17 @@ aux_lib/CMakeFiles/plot_lib.dir/all: aux_lib/CMakeFiles/rosgraph_msgs_generate_m
 aux_lib/CMakeFiles/plot_lib.dir/all: aux_lib/CMakeFiles/traffic_msgs_generate_messages_nodejs.dir/all
 aux_lib/CMakeFiles/plot_lib.dir/all: aux_lib/CMakeFiles/actionlib_msgs_generate_messages_py.dir/all
 aux_lib/CMakeFiles/plot_lib.dir/all: aux_lib/CMakeFiles/roscpp_generate_messages_eus.dir/all
+aux_lib/CMakeFiles/plot_lib.dir/all: aux_lib/CMakeFiles/roscpp_generate_messages_nodejs.dir/all
+aux_lib/CMakeFiles/plot_lib.dir/all: aux_lib/CMakeFiles/std_msgs_generate_messages_cpp.dir/all
+aux_lib/CMakeFiles/plot_lib.dir/all: aux_lib/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/all
+aux_lib/CMakeFiles/plot_lib.dir/all: aux_lib/CMakeFiles/traffic_msgs_generate_messages_eus.dir/all
+aux_lib/CMakeFiles/plot_lib.dir/all: aux_lib/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/all
+aux_lib/CMakeFiles/plot_lib.dir/all: aux_lib/CMakeFiles/std_msgs_generate_messages_py.dir/all
+aux_lib/CMakeFiles/plot_lib.dir/all: aux_lib/CMakeFiles/geometry_msgs_generate_messages_eus.dir/all
+aux_lib/CMakeFiles/plot_lib.dir/all: aux_lib/CMakeFiles/traffic_msgs_generate_messages_cpp.dir/all
+aux_lib/CMakeFiles/plot_lib.dir/all: aux_lib/CMakeFiles/std_msgs_generate_messages_nodejs.dir/all
+aux_lib/CMakeFiles/plot_lib.dir/all: aux_lib/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all
+aux_lib/CMakeFiles/plot_lib.dir/all: aux_lib/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/all
 	$(MAKE) -f aux_lib/CMakeFiles/plot_lib.dir/build.make aux_lib/CMakeFiles/plot_lib.dir/depend
 	$(MAKE) -f aux_lib/CMakeFiles/plot_lib.dir/build.make aux_lib/CMakeFiles/plot_lib.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/j0986329/shrita_test/stopline_algo/build/CMakeFiles --progress-num=15,16 "Built target plot_lib"
@@ -730,17 +726,6 @@ aux_lib/CMakeFiles/aux_lib.dir/all: aux_lib/CMakeFiles/geometry_msgs_generate_me
 aux_lib/CMakeFiles/aux_lib.dir/all: aux_lib/CMakeFiles/roscpp_generate_messages_lisp.dir/all
 aux_lib/CMakeFiles/aux_lib.dir/all: aux_lib/CMakeFiles/traffic_msgs_generate_messages_py.dir/all
 aux_lib/CMakeFiles/aux_lib.dir/all: aux_lib/CMakeFiles/std_msgs_generate_messages_eus.dir/all
-aux_lib/CMakeFiles/aux_lib.dir/all: aux_lib/CMakeFiles/roscpp_generate_messages_nodejs.dir/all
-aux_lib/CMakeFiles/aux_lib.dir/all: aux_lib/CMakeFiles/std_msgs_generate_messages_cpp.dir/all
-aux_lib/CMakeFiles/aux_lib.dir/all: aux_lib/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/all
-aux_lib/CMakeFiles/aux_lib.dir/all: aux_lib/CMakeFiles/traffic_msgs_generate_messages_eus.dir/all
-aux_lib/CMakeFiles/aux_lib.dir/all: aux_lib/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/all
-aux_lib/CMakeFiles/aux_lib.dir/all: aux_lib/CMakeFiles/std_msgs_generate_messages_py.dir/all
-aux_lib/CMakeFiles/aux_lib.dir/all: aux_lib/CMakeFiles/geometry_msgs_generate_messages_eus.dir/all
-aux_lib/CMakeFiles/aux_lib.dir/all: aux_lib/CMakeFiles/traffic_msgs_generate_messages_cpp.dir/all
-aux_lib/CMakeFiles/aux_lib.dir/all: aux_lib/CMakeFiles/std_msgs_generate_messages_nodejs.dir/all
-aux_lib/CMakeFiles/aux_lib.dir/all: aux_lib/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all
-aux_lib/CMakeFiles/aux_lib.dir/all: aux_lib/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/all
 aux_lib/CMakeFiles/aux_lib.dir/all: aux_lib/CMakeFiles/nav_msgs_generate_messages_nodejs.dir/all
 aux_lib/CMakeFiles/aux_lib.dir/all: aux_lib/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
 aux_lib/CMakeFiles/aux_lib.dir/all: aux_lib/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/all
@@ -757,6 +742,17 @@ aux_lib/CMakeFiles/aux_lib.dir/all: aux_lib/CMakeFiles/rosgraph_msgs_generate_me
 aux_lib/CMakeFiles/aux_lib.dir/all: aux_lib/CMakeFiles/traffic_msgs_generate_messages_nodejs.dir/all
 aux_lib/CMakeFiles/aux_lib.dir/all: aux_lib/CMakeFiles/actionlib_msgs_generate_messages_py.dir/all
 aux_lib/CMakeFiles/aux_lib.dir/all: aux_lib/CMakeFiles/roscpp_generate_messages_eus.dir/all
+aux_lib/CMakeFiles/aux_lib.dir/all: aux_lib/CMakeFiles/roscpp_generate_messages_nodejs.dir/all
+aux_lib/CMakeFiles/aux_lib.dir/all: aux_lib/CMakeFiles/std_msgs_generate_messages_cpp.dir/all
+aux_lib/CMakeFiles/aux_lib.dir/all: aux_lib/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/all
+aux_lib/CMakeFiles/aux_lib.dir/all: aux_lib/CMakeFiles/traffic_msgs_generate_messages_eus.dir/all
+aux_lib/CMakeFiles/aux_lib.dir/all: aux_lib/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/all
+aux_lib/CMakeFiles/aux_lib.dir/all: aux_lib/CMakeFiles/std_msgs_generate_messages_py.dir/all
+aux_lib/CMakeFiles/aux_lib.dir/all: aux_lib/CMakeFiles/geometry_msgs_generate_messages_eus.dir/all
+aux_lib/CMakeFiles/aux_lib.dir/all: aux_lib/CMakeFiles/traffic_msgs_generate_messages_cpp.dir/all
+aux_lib/CMakeFiles/aux_lib.dir/all: aux_lib/CMakeFiles/std_msgs_generate_messages_nodejs.dir/all
+aux_lib/CMakeFiles/aux_lib.dir/all: aux_lib/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all
+aux_lib/CMakeFiles/aux_lib.dir/all: aux_lib/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/all
 	$(MAKE) -f aux_lib/CMakeFiles/aux_lib.dir/build.make aux_lib/CMakeFiles/aux_lib.dir/depend
 	$(MAKE) -f aux_lib/CMakeFiles/aux_lib.dir/build.make aux_lib/CMakeFiles/aux_lib.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/j0986329/shrita_test/stopline_algo/build/CMakeFiles --progress-num=1,2,3,4 "Built target aux_lib"
@@ -1759,7 +1755,7 @@ stopline_test/CMakeFiles/stopline_test_mpc_node.dir/all: aux_lib/CMakeFiles/plot
 stopline_test/CMakeFiles/stopline_test_mpc_node.dir/all: aux_lib/CMakeFiles/aux_lib.dir/all
 	$(MAKE) -f stopline_test/CMakeFiles/stopline_test_mpc_node.dir/build.make stopline_test/CMakeFiles/stopline_test_mpc_node.dir/depend
 	$(MAKE) -f stopline_test/CMakeFiles/stopline_test_mpc_node.dir/build.make stopline_test/CMakeFiles/stopline_test_mpc_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/j0986329/shrita_test/stopline_algo/build/CMakeFiles --progress-num=19,20 "Built target stopline_test_mpc_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/j0986329/shrita_test/stopline_algo/build/CMakeFiles --progress-num=17,18 "Built target stopline_test_mpc_node"
 .PHONY : stopline_test/CMakeFiles/stopline_test_mpc_node.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1778,62 +1774,6 @@ stopline_test_mpc_node: stopline_test/CMakeFiles/stopline_test_mpc_node.dir/rule
 stopline_test/CMakeFiles/stopline_test_mpc_node.dir/clean:
 	$(MAKE) -f stopline_test/CMakeFiles/stopline_test_mpc_node.dir/build.make stopline_test/CMakeFiles/stopline_test_mpc_node.dir/clean
 .PHONY : stopline_test/CMakeFiles/stopline_test_mpc_node.dir/clean
-
-#=============================================================================
-# Target rules for target stopline_test/CMakeFiles/stopline_test_iter_node.dir
-
-# All Build rule for target.
-stopline_test/CMakeFiles/stopline_test_iter_node.dir/all: aux_lib/CMakeFiles/plot_lib.dir/all
-stopline_test/CMakeFiles/stopline_test_iter_node.dir/all: aux_lib/CMakeFiles/aux_lib.dir/all
-	$(MAKE) -f stopline_test/CMakeFiles/stopline_test_iter_node.dir/build.make stopline_test/CMakeFiles/stopline_test_iter_node.dir/depend
-	$(MAKE) -f stopline_test/CMakeFiles/stopline_test_iter_node.dir/build.make stopline_test/CMakeFiles/stopline_test_iter_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/j0986329/shrita_test/stopline_algo/build/CMakeFiles --progress-num=17,18 "Built target stopline_test_iter_node"
-.PHONY : stopline_test/CMakeFiles/stopline_test_iter_node.dir/all
-
-# Build rule for subdir invocation for target.
-stopline_test/CMakeFiles/stopline_test_iter_node.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/j0986329/shrita_test/stopline_algo/build/CMakeFiles 8
-	$(MAKE) -f CMakeFiles/Makefile2 stopline_test/CMakeFiles/stopline_test_iter_node.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/j0986329/shrita_test/stopline_algo/build/CMakeFiles 0
-.PHONY : stopline_test/CMakeFiles/stopline_test_iter_node.dir/rule
-
-# Convenience name for target.
-stopline_test_iter_node: stopline_test/CMakeFiles/stopline_test_iter_node.dir/rule
-
-.PHONY : stopline_test_iter_node
-
-# clean rule for target.
-stopline_test/CMakeFiles/stopline_test_iter_node.dir/clean:
-	$(MAKE) -f stopline_test/CMakeFiles/stopline_test_iter_node.dir/build.make stopline_test/CMakeFiles/stopline_test_iter_node.dir/clean
-.PHONY : stopline_test/CMakeFiles/stopline_test_iter_node.dir/clean
-
-#=============================================================================
-# Target rules for target stopline_test/CMakeFiles/stopline_test_simple_node.dir
-
-# All Build rule for target.
-stopline_test/CMakeFiles/stopline_test_simple_node.dir/all: aux_lib/CMakeFiles/plot_lib.dir/all
-stopline_test/CMakeFiles/stopline_test_simple_node.dir/all: aux_lib/CMakeFiles/aux_lib.dir/all
-	$(MAKE) -f stopline_test/CMakeFiles/stopline_test_simple_node.dir/build.make stopline_test/CMakeFiles/stopline_test_simple_node.dir/depend
-	$(MAKE) -f stopline_test/CMakeFiles/stopline_test_simple_node.dir/build.make stopline_test/CMakeFiles/stopline_test_simple_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/j0986329/shrita_test/stopline_algo/build/CMakeFiles --progress-num=21,22 "Built target stopline_test_simple_node"
-.PHONY : stopline_test/CMakeFiles/stopline_test_simple_node.dir/all
-
-# Build rule for subdir invocation for target.
-stopline_test/CMakeFiles/stopline_test_simple_node.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/j0986329/shrita_test/stopline_algo/build/CMakeFiles 8
-	$(MAKE) -f CMakeFiles/Makefile2 stopline_test/CMakeFiles/stopline_test_simple_node.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/j0986329/shrita_test/stopline_algo/build/CMakeFiles 0
-.PHONY : stopline_test/CMakeFiles/stopline_test_simple_node.dir/rule
-
-# Convenience name for target.
-stopline_test_simple_node: stopline_test/CMakeFiles/stopline_test_simple_node.dir/rule
-
-.PHONY : stopline_test_simple_node
-
-# clean rule for target.
-stopline_test/CMakeFiles/stopline_test_simple_node.dir/clean:
-	$(MAKE) -f stopline_test/CMakeFiles/stopline_test_simple_node.dir/build.make stopline_test/CMakeFiles/stopline_test_simple_node.dir/clean
-.PHONY : stopline_test/CMakeFiles/stopline_test_simple_node.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

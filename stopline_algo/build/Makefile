@@ -882,32 +882,6 @@ stopline_test_mpc_node/fast:
 	$(MAKE) -f stopline_test/CMakeFiles/stopline_test_mpc_node.dir/build.make stopline_test/CMakeFiles/stopline_test_mpc_node.dir/build
 .PHONY : stopline_test_mpc_node/fast
 
-#=============================================================================
-# Target rules for targets named stopline_test_iter_node
-
-# Build rule for target.
-stopline_test_iter_node: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 stopline_test_iter_node
-.PHONY : stopline_test_iter_node
-
-# fast build rule for target.
-stopline_test_iter_node/fast:
-	$(MAKE) -f stopline_test/CMakeFiles/stopline_test_iter_node.dir/build.make stopline_test/CMakeFiles/stopline_test_iter_node.dir/build
-.PHONY : stopline_test_iter_node/fast
-
-#=============================================================================
-# Target rules for targets named stopline_test_simple_node
-
-# Build rule for target.
-stopline_test_simple_node: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 stopline_test_simple_node
-.PHONY : stopline_test_simple_node
-
-# fast build rule for target.
-stopline_test_simple_node/fast:
-	$(MAKE) -f stopline_test/CMakeFiles/stopline_test_simple_node.dir/build.make stopline_test/CMakeFiles/stopline_test_simple_node.dir/build
-.PHONY : stopline_test_simple_node/fast
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -976,8 +950,6 @@ help:
 	@echo "... actionlib_msgs_generate_messages_py"
 	@echo "... roscpp_generate_messages_eus"
 	@echo "... stopline_test_mpc_node"
-	@echo "... stopline_test_iter_node"
-	@echo "... stopline_test_simple_node"
 .PHONY : help
 
 
