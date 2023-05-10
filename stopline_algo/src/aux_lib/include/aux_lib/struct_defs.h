@@ -98,7 +98,8 @@ struct struct_params_alg {
   double min_gap;          /**< Min gap for space based trajectory (m) */
   double interp_back_path; /**< How many meters to return to path (m) */
 
-  
+  double stopline_threshold;
+  double stopline_time;
 };
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -134,26 +135,13 @@ struct IDM {
  * - added by shrita
  */
 struct StoplineBreak {
-  Eigen::VectorXd vmax_stopline; /**<Upper bound on velocity for stop line*/
-  bool NearStopline; /**<Bool for whether car is in stopline region*/
-  bool Break;
-  double stopline_dist_m; /**<Distance between car and stopline*/
-  int stopline_timer; /**<Timer for stopline wait*/
-  int max_iter;
-  double a_init;
-  double j_init;
-  float rate;
-  Eigen::VectorXd p_traj; /**<Upper bound on velocity for stop line*/
-  Eigen::VectorXd v_traj; /**<Upper bound on velocity for stop line*/
-  Eigen::VectorXd a_traj; /**<Upper bound on velocity for stop line*/
-  Eigen::VectorXd j_traj; /**<Upper bound on velocity for stop line*/
-
-  double stopline_dmin; /**<Min distance from stop line at which 
-                                      decceleration should begin*/
-  double stopline_amin; /**<Min acc for stopping behaviour*/ 
-  double stopline_tmax; /**<Max time for stopping behaviour*/
-  double stopline_threshold; /**<Threshold distance for stopping and starting timer*/
-  int case_no;
+    bool NearStopline; /**<Bool for whether car is done waiting as stopline (0 for done)*/
+    double stopline_dist; /**<Distance between car and stopline*/
+    int stopline_timer; /**<Timer for stopline wait*/
+    Eigen::VectorXd p_traj; /**<Upper bound on velocity for stop line*/
+    Eigen::VectorXd v_traj; /**<Upper bound on velocity for stop line*/
+    Eigen::VectorXd a_traj; /**<Upper bound on velocity for stop line*/
+    Eigen::VectorXd j_traj; /**<Upper bound on velocity for stop line*/
 };
 
 /**

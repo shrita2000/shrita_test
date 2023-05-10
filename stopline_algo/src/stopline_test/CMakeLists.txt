@@ -148,8 +148,6 @@ include_directories(
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
 # add_executable(${PROJECT_NAME}_node src/stopline_test_node.cpp)
-add_executable(${PROJECT_NAME}_simple_node src/test.cpp)
-add_executable(${PROJECT_NAME}_iter_node src/main_iter.cpp)
 add_executable(${PROJECT_NAME}_mpc_node src/main_mpc.cpp)
 
 ## Rename C++ executable without prefix
@@ -166,14 +164,6 @@ add_executable(${PROJECT_NAME}_mpc_node src/main_mpc.cpp)
 # target_link_libraries(${PROJECT_NAME}_node
 #   ${catkin_LIBRARIES}
 # )
-target_link_libraries(${PROJECT_NAME}_simple_node
-  ${catkin_LIBRARIES}
-  OsqpEigen::OsqpEigen
-)
-target_link_libraries(${PROJECT_NAME}_iter_node
-  ${catkin_LIBRARIES}
-  OsqpEigen::OsqpEigen
-)
 target_link_libraries(${PROJECT_NAME}_mpc_node
   ${catkin_LIBRARIES}
   OsqpEigen::OsqpEigen
