@@ -1,17 +1,15 @@
-#include <fstream>
-#include <iostream>
 #include <string>
 #include <vector>
 #include <ros/ros.h>
+
 #include <aux_lib/struct_defs.h>
-#include <aux_lib/plot_functions.h>
 #include <aux_lib/aux_functions.h>
-#include "OsqpEigen/OsqpEigen.h"
-#include <eigen3/Eigen/Dense>
-#include <std_msgs/Float32.h>
-#include <std_msgs/Float32MultiArray.h>
-#include "matplotlibcpp.h"
 #include <aux_lib/qp_problem.h>
+
+#include <eigen3/Eigen/Dense>
+
+#include "matplotlibcpp.h"
+
 
 namespace plt = matplotlibcpp;
 
@@ -85,7 +83,7 @@ int main(int argc, char **argv) {
         bool plan_traj_isvalid = false;
         
         //initialize params for stopline
-        double stopline_dist = 15; //initial dist from stopline 
+        double stopline_dist = 35; //initial dist from stopline 
         stopalgo_struct.stopline_dmin = pow(params_alg_m.v_max,2)/(2*params_alg_m.acc_max)+10;
         stopalgo_struct.stopline_amin = 0.4;
         stopalgo_struct.stopline_tmax = 1;

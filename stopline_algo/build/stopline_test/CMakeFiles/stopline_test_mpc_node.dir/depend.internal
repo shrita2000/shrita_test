@@ -86,11 +86,7 @@ stopline_test/CMakeFiles/stopline_test_mpc_node.dir/src/main_mpc.cpp.o
  /opt/ros/noetic/include/ros/wall_timer.h
  /opt/ros/noetic/include/ros/wall_timer_options.h
  /opt/ros/noetic/include/rosconsole/macros_generated.h
- /opt/ros/noetic/include/std_msgs/Float32.h
- /opt/ros/noetic/include/std_msgs/Float32MultiArray.h
  /opt/ros/noetic/include/std_msgs/Header.h
- /opt/ros/noetic/include/std_msgs/MultiArrayDimension.h
- /opt/ros/noetic/include/std_msgs/MultiArrayLayout.h
  /opt/ros/noetic/include/xmlrpcpp/XmlRpcDecl.h
  /opt/ros/noetic/include/xmlrpcpp/XmlRpcValue.h
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QTimer
