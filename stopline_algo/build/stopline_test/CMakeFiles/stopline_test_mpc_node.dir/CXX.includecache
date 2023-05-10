@@ -277,8 +277,6 @@ aux_lib/aux_functions.h
 -
 OsqpEigen/OsqpEigen.h
 /home/j0986329/shrita_test/stopline_algo/src/stopline_test/src/OsqpEigen/OsqpEigen.h
-aux_lib/qp_problem.h
--
 eigen3/Eigen/Dense
 -
 std_msgs/Float32.h
@@ -287,6 +285,8 @@ std_msgs/Float32MultiArray.h
 -
 matplotlibcpp.h
 /home/j0986329/shrita_test/stopline_algo/src/stopline_test/src/matplotlibcpp.h
+aux_lib/qp_problem.h
+-
 
 /opt/ros/noetic/include/geometry_msgs/Accel.h
 string

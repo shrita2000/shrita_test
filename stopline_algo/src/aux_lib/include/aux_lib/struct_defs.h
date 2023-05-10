@@ -59,6 +59,8 @@ struct struct_params_alg {
   double wa; /**< Weight for acceleration */
   double wj; /**< Weight for jerk */
   double wf; /**< Weight for maximizing displacement */
+  double wp; //added by shrita
+  double gama_p; //added by shrita
 
   double ego_length;     /** Ego car length (m)  */
   double ego_width;      /**< Ego car width (m) */
@@ -141,6 +143,7 @@ struct StoplineBreak {
   double a_init;
   double j_init;
   float rate;
+  Eigen::VectorXd p_traj; /**<Upper bound on velocity for stop line*/
   Eigen::VectorXd v_traj; /**<Upper bound on velocity for stop line*/
   Eigen::VectorXd a_traj; /**<Upper bound on velocity for stop line*/
   Eigen::VectorXd j_traj; /**<Upper bound on velocity for stop line*/

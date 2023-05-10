@@ -73,13 +73,22 @@ class QPProblem {
   double wj = params_alg.wj / std::max(std::abs(params_alg.jrk_min),
                                        std::abs(params_alg.jrk_max));
   double wf = params_alg.wf;
+  double wp = params_alg.wp; //stopline position weight
+  double gama_p = params_alg.gama_p; //stopline position weight scale
 
-  // Obstacle free
+  // Ideal state vector to follow for stopline braking
+  x_ideal = Eigen::VectorXd(params_alg.total_np);
+  x_ideal << Eigen::VectorXd::Constant(params_alg.np, 400.0),
+      Eigen::VectorXd::Constant(params_alg.np - 1, 0.0),
+      Eigen::VectorXd::Constant(params_alg.np - 2, 0.0),
+      Eigen::VectorXd::Constant(params_alg.np - 3, 0.0);
+
+  // Stopline behaviour weighting matrix
   std::vector<Trip_d> H_trip(params_alg.total_np);
   for (uint16_t k = 0; k < params_alg.total_np; ++k) {
     if (k >= params_alg.pos_idxs(0) &&
         k <= params_alg.pos_idxs(Eigen::placeholders::last)) {
-      H_trip[k] = Trip_d(k, k, 0.0);
+      H_trip[k] = Trip_d(k, k, wp*pow(gama_p,k));
     }
 
     if (k >= params_alg.vel_idxs(0) &&
@@ -89,7 +98,7 @@ class QPProblem {
 
     if (k >= params_alg.acc_idxs(0) &&
         k <= params_alg.acc_idxs(Eigen::placeholders::last)) {
-      H_trip[k] = Trip_d(k, k, wa);
+      H_trip[k] = Trip_d(k, k, 0.0);
     }
 
     if (k >= params_alg.jrk_idxs(0) &&
@@ -102,9 +111,8 @@ class QPProblem {
   H_free_m.setFromTriplets(H_trip.begin(), H_trip.end());
   H_free_m.makeCompressed();
 
+  //Initialize linear term
   Eigen::VectorXd f = Eigen::VectorXd::Zero(params_alg.total_np);
-  f(params_alg.pos_idxs(0)) = wf;
-  f(params_alg.pos_idxs(Eigen::placeholders::last)) = -wf;
   f_free_m = f;
 
   // Constraints QP optimization initialization
@@ -175,25 +183,29 @@ class QPProblem {
     beq(params_alg_m.acc_idxs(0)) = ad_sol_m.accel;
   }
 
-  //Set final H,A,f,ub,lb    
+  //Set H,A,f,ub,lb    
   H = H_free_m;
   Aeq = Aeq_free_m;
   f = f_free_m;
   ub_state(params_alg_m.pos_idxs) = ub_pos;
   lb_state(params_alg_m.pos_idxs) = lb_pos;
 
-  //Set special bounds on v for Stopline case - added by shrita
+   //Change cost function and bounds for Stopline case - added by shrita
   if(stopalgo_struct.NearStopline){
-    ROS_INFO("Debug v_ubsize %ld", ub_state(params_alg_m.vel_idxs).size());
+    
+    //update x ideal vector
+    x_ideal(params_alg_m.pos_idxs) = Eigen::VectorXd::
+      Constant(params_alg_m.np, stopalgo_struct.stopline_dist_m);
+
+    //update linear term F
+    f = -H_free_m*x_ideal;
+
+    //update position uppper bound
     for(int i=0; i<params_alg_m.np; i++){
-      // if(ub_state(params_alg_m.pos_idxs(i))>stopalgo_struct.stopline_dist_m){
-      //   ub_state(params_alg_m.pos_idxs(i))=stopalgo_struct.stopline_dist_m;
-      // }
-      if(i<params_alg_m.np-1){
-        ub_state(params_alg_m.vel_idxs(i))=stopalgo_struct.vmax_stopline(i);
+      if(ub_state(params_alg_m.pos_idxs(i))>stopalgo_struct.stopline_dist_m){
+        ub_state(params_alg_m.pos_idxs(i))=stopalgo_struct.stopline_dist_m;
       }
     }
-    ROS_INFO("Debug vmax size %ld", stopalgo_struct.vmax_stopline.size());
   } 
 
   // Joint bounds
@@ -407,6 +419,8 @@ class QPProblem {
 
   Eigen::VectorXd lb_m; /**< Lower bound state */
   Eigen::VectorXd ub_m; /**< Upper bound state */
+
+  Eigen::VectorXd x_ideal; /**< Stopline breaking ideal state */
 
   ai4ad::AgentStateSimple ad_sol_m; /**< AD current state */
 };

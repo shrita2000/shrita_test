@@ -543,51 +543,9 @@ void AccelerationBehavior(const ai4ad::AgentStateSimple &state_input,
   bool CheckStopLine(double stopline_dist,
                     const ai4ad::AgentStateSimple &cur_ad_state, ai4ad::StoplineBreak 
                     &stopalgo_struct, const ai4ad::struct_params_alg &params_alg) {
-    
-    //initialize vmax, astop, tstop, nstop 
-    stopalgo_struct.vmax_stopline = Eigen::VectorXd::Constant(params_alg.np-1,0.05);
-    double v_init = cur_ad_state.vel + cur_ad_state.accel*params_alg.dt + 0.1;
-    double t_stopline = 2*stopline_dist/v_init;
-    double a_stopline = pow(v_init,2)/(2*stopline_dist);
-    uint16_t n_stopline = uint16_t(std::round(t_stopline/params_alg.dt));
-    //calculate vmax_stopline bounds
-    double t_curr = 0;
-    //asign strictly decreasing values to vmax
-    stopalgo_struct.vmax_stopline(0)=cur_ad_state.vel;
-    stopalgo_struct.vmax_stopline(1)=v_init;
-    for(int i=2; i<stopalgo_struct.vmax_stopline.size(); i++){
-      if (i<n_stopline+2){
-        stopalgo_struct.vmax_stopline(i) = v_init - a_stopline*t_curr;
-        t_curr += params_alg.dt;  
-    }}
-    
     //update stopline_dist_m for imposing pos bounds
     stopalgo_struct.stopline_dist_m = stopline_dist; 
-    
-    //if in stopline region but not at the line
-    if (stopline_dist<stopalgo_struct.stopline_dmin 
-      && stopline_dist>stopalgo_struct.stopline_threshold){
-      //if astopline becomes very very low, temporarily accelerate
-      //after acceleration once threshold value is crossed, resume stopping
-      if (stopalgo_struct.NearStopline==false && a_stopline>stopalgo_struct.stopline_amin){
-        stopalgo_struct.NearStopline=true;
-      }else if (stopalgo_struct.NearStopline==true && a_stopline<0.01){
-        stopalgo_struct.NearStopline=false;
-      }
-    
-    //if at stopline, wait for tmax seconds
-    }else if (stopline_dist<stopalgo_struct.stopline_threshold && stopline_dist>0 
-        && stopalgo_struct.stopline_timer<stopalgo_struct.stopline_tmax*10){
-      //cant assign vmax as zero since we will get an infeasible soln
-      stopalgo_struct.NearStopline = true;
-      stopalgo_struct.stopline_timer++;
-      ROS_INFO("Stop Timer %u", stopalgo_struct.stopline_timer);
-    
-    //otherwise, proceed as usual  
-    }else{
-      stopalgo_struct.NearStopline = false;
-      stopalgo_struct.vmax_stopline = Eigen::VectorXd::Zero(params_alg.np-1);
-    }
+    stopalgo_struct.NearStopline = true;
     return stopalgo_struct.NearStopline;
   }
 
