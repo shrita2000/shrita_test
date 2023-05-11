@@ -543,9 +543,10 @@ void AccelerationBehavior(const ai4ad::AgentStateSimple &state_input,
   bool CheckStopLine(double stopline_dist,
                     const ai4ad::AgentStateSimple &cur_ad_state, ai4ad::StoplineBreak 
                     &stopalgo_struct, const ai4ad::struct_params_alg &params_alg) {
-    //update stopline_dist_m for imposing pos bounds
-    stopalgo_struct.stopline_dist_m = stopline_dist; 
+    //update stopline_dist_m for QP problem
+    stopalgo_struct.stopline_dist = stopline_dist; 
     stopalgo_struct.NearStopline = true;
+<<<<<<< HEAD
     return stopalgo_struct.NearStopline;
   }
 
@@ -871,6 +872,19 @@ void AccelerationBehavior(const ai4ad::AgentStateSimple &state_input,
 
 //     return v_iter;
 //    }
+=======
+    //if threshold reached start timer
+    if(stopalgo_struct.stopline_dist <= params_alg.stopline_threshold){
+      stopalgo_struct.timer+=0.1;
+    }
+    //if wait time completed, set bool to zero
+    if(stopalgo_struct.timer>params_alg.stopline_time){
+      stopalgo_struct.NearStopline = false;
+    }
+    return stopalgo_struct.NearStopline;
+  }
+
+>>>>>>> 7f744cb5f4a4f3cce81d5c444f9a460e8b72ac68
 
 ////////////////////////// Transformation Functions //////////////////////////
 

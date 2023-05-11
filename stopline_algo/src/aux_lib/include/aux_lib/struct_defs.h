@@ -98,7 +98,8 @@ struct struct_params_alg {
   double min_gap;          /**< Min gap for space based trajectory (m) */
   double interp_back_path; /**< How many meters to return to path (m) */
 
-  
+  double stopline_threshold;
+  double stopline_time;
 };
 
 ////////////////////////////////////////////////////////////////////////////////
