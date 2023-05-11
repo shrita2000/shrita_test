@@ -546,7 +546,6 @@ void AccelerationBehavior(const ai4ad::AgentStateSimple &state_input,
     //update stopline_dist_m for QP problem
     stopalgo_struct.stopline_dist = stopline_dist; 
     stopalgo_struct.NearStopline = true;
-<<<<<<< HEAD
     return stopalgo_struct.NearStopline;
   }
 
@@ -872,19 +871,6 @@ void AccelerationBehavior(const ai4ad::AgentStateSimple &state_input,
 
 //     return v_iter;
 //    }
-=======
-    //if threshold reached start timer
-    if(stopalgo_struct.stopline_dist <= params_alg.stopline_threshold){
-      stopalgo_struct.timer+=0.1;
-    }
-    //if wait time completed, set bool to zero
-    if(stopalgo_struct.timer>params_alg.stopline_time){
-      stopalgo_struct.NearStopline = false;
-    }
-    return stopalgo_struct.NearStopline;
-  }
-
->>>>>>> 7f744cb5f4a4f3cce81d5c444f9a460e8b72ac68
 
 ////////////////////////// Transformation Functions //////////////////////////
 

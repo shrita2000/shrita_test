@@ -83,19 +83,11 @@ int main(int argc, char **argv) {
         bool plan_traj_isvalid = false;
         
         //initialize params for stopline
-<<<<<<< HEAD
         double stopline_dist = 15; //initial dist from stopline 
         // stopalgo_struct.stopline_dmin = pow(params_alg_m.v_max,2)/(2*params_alg_m.acc_max)+10;
         // stopalgo_struct.stopline_amin = 0.4;
         // stopalgo_struct.stopline_tmax = 1;
         // stopalgo_struct.stopline_threshold = 0.2;
-=======
-        double stopline_dist = 35; //initial dist from stopline 
-        stopalgo_struct.stopline_dmin = pow(params_alg_m.v_max,2)/(2*params_alg_m.acc_max)+10;
-        stopalgo_struct.stopline_amin = 0.4;
-        stopalgo_struct.stopline_tmax = 1;
-        stopalgo_struct.stopline_threshold = 0.2;
->>>>>>> 7f744cb5f4a4f3cce81d5c444f9a460e8b72ac68
         
         //initialize qp problem
         QPProblem* qp_problem_m = new QPProblem(params_alg_m);
